@@ -12,8 +12,6 @@ namespace CustomerCredit.API.Consumers
                await context.RespondAsync(new CreditNotSuitableResponse("Maksimum 1000,000 e kadar kredi çekebilirsin"));
             }
             else {
-               
-
                 await context.RespondAsync(new CreditSuitableResponse(800000,creditScore:150));
             }
         }
