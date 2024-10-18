@@ -14,7 +14,7 @@ namespace CustomerCredit.API.Consumer
             }
             else
             {
-                await context.RespondAsync(new CreditIsSuitable(80000, creditScore:150));
+                await context.RespondAsync(new CreditSuitableResponse(80000, creditScore:150));
             }
         }
     }
