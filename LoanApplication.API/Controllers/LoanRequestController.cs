@@ -1,6 +1,6 @@
 ﻿using LoanApplication.API.DTOs;
 using MassTransit;
-using MassTransit.Mediator;
+using MediatR;
 using Messaging.CustomerCredit;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -39,7 +39,7 @@ namespace LoanApplication.API.Controllers
             return Ok(response.Message);
         }
 
-        [HttpGet("/v2")]
+        [HttpPost("v2")]
         public async Task<IActionResult> GetLoanRequestWithMediatR([FromBody] LoanRequestDto request)
         {
             //MassTransit de commandlar Send metodu ile gönderiliyordu. Eventlerde Publish ile göndereliyordu.
